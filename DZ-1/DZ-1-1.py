@@ -8,7 +8,9 @@
 
 user_number = int(input("Input number:\n"))
 
-if user_number == 6 or user_number == 7:
+if user_number < 1 or user_number > 7:
+    print('You entered wrong number')
+elif user_number == 6 or user_number == 7:
     print('This day is weekend')
 else:
     print('This day is workday')
