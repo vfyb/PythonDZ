@@ -7,3 +7,17 @@
 # - x=34; y=-30 -> 4
 # - x=2; y=4-> 1
 # - x=-34; y=-30 -> 3
+
+x = int(input('Input X coordinate:\n'))
+y = int(input('Input Y coordinate:\n'))
+
+if x == 0 or y == 0:
+    print("Can't determine quarter plane.")
+elif x > 0 and y > 0:
+    print('Point in 1 quarter plane.')
+elif x < 0 and y > 0:
+    print('Point in 2 quarter plane.')
+elif x < 0 and y < 0:
+    print('Point in 3 quarter plane.')
+else:
+    print('Point in 4 quarter plane.')
