@@ -11,4 +11,4 @@ def GetSumOddElements(list):
         sum_odd += list[i]
     return sum_odd
 
-print(GetSumOddElements(user_list))
+print(f'Sum of odd elements in {user_list} = {GetSumOddElements(user_list)}')
