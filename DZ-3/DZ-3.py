@@ -14,8 +14,7 @@ def GetDiffMaxMin(list):
         if (list[i] % 1) != 0:
             fractional_part_list.append(round((list[i] % 1), 3))
 
-    print(fractional_part_list)
     return(round(( max(fractional_part_list) - min(fractional_part_list) ), 3))
 
-print(GetDiffMaxMin(user_list1))
-print(GetDiffMaxMin(user_list2))
+print(f'Difference max and min {user_list1} = {GetDiffMaxMin(user_list1)}')
+print(f'Difference max and min {user_list1} = {GetDiffMaxMin(user_list2)}')
