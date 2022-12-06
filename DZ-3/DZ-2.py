@@ -16,6 +16,8 @@ def GetMultPairNumber(list):
 
     return result_list
 
-
+print(f'{user_list1} =>', end =" ")
 print(GetMultPairNumber(user_list1))
+
+print(f'{user_list2} =>', end =" ")
 print(GetMultPairNumber(user_list2))
