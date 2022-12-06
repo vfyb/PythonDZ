@@ -12,10 +12,10 @@ def GetDiffMaxMin(list):
 
     for i in range(len(list)):
         if (list[i] % 1) != 0:
-            fractional_part_list.append(round((list[i] % 1), 2))
+            fractional_part_list.append(round((list[i] % 1), 3))
 
     print(fractional_part_list)
-    return(round(( max(fractional_part_list) - min(fractional_part_list) ), 2))
+    return(round(( max(fractional_part_list) - min(fractional_part_list) ), 3))
 
 print(GetDiffMaxMin(user_list1))
 print(GetDiffMaxMin(user_list2))
