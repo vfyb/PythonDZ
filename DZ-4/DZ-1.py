@@ -8,13 +8,10 @@ PI = math.pi
 user_d = float(input('Input accuracy (for example 0.001):\n'))
 
 round_pi = int((PI / user_d) * 10)
-print(round_pi)
 
 if (round_pi % 10) > 4:
     round_pi = int((round_pi + 10) / 10)
 else:
     round_pi = int(round_pi / 10)
-
-print(round_pi)
 
 print(f'Rounded pi={PI} => {round_pi * user_d}')
