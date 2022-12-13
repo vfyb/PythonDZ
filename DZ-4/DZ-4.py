@@ -27,5 +27,5 @@ for i in range(0, k + 1):
 
 print(f'k={k} => {polynomial}')
 
-with open('DZ-4.txt', 'w') as data:
+with open('DZ-4/DZ-4.txt', 'w') as data:
     data.write(f'k = {k} => {polynomial} \n')
