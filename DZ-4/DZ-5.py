@@ -29,7 +29,7 @@ for key in max_dict:
     elif (key not in dict_from_1_file) & (key in dict_from_2_file):
         dict_result[key] = dict_from_2_file[key]
 
-def print_dict(dict):
+def create_polinom(dict):
     result = ''
     for key in dict:
         if key != 'x^0':
@@ -38,7 +38,7 @@ def print_dict(dict):
             result = result + dict[key]
     return result
 
-print(f'{print_dict(dict_from_1_file)} \n + \n{print_dict(dict_from_2_file)} \n = \n{print_dict(dict_result)}')
+print(f'{create_polinom(dict_from_1_file)} \n + \n{create_polinom(dict_from_2_file)} \n = \n{create_polinom(dict_result)}')
 
 with open('DZ-4/DZ-5-3.txt', 'w') as data:
-    data.write(print_dict(dict_result))
+    data.write(create_polinom(dict_result))
