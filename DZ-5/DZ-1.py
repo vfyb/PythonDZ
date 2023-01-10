@@ -10,31 +10,42 @@
 from random import randint
 
 game_status = int(120)
-print(f'You see {game_status} candies and can take 28 or less of them.\nInput number how many candies you will take')
+print(f'\nYou see {game_status} candies and can take 28 or less of them.\nInput number how many candies you will take.\n')
+
+def gamer_input(max):
+    flag = False
+    while not flag:
+        try:
+            input_num = int(input(f'Input number from 1 to {max}:\n')) 
+            flag = True
+        except:
+            print(f'Incorrect input, try again with number from 1 to {max}.')
+            continue
+    return input_num
 
 def human_gamer(game_status):
-    # Это условие для ввода корректных чисел когда конфет < 28
-    if game_status in range(1, 28):
-        input_num = int(input(f'Input number from 1 to {game_status}:\n'))
-        
-        if input_num in range(1, game_status + 1):
-            return game_status - input_num
-        else:
-            print(f'Your number is not in range from 1 to {game_status}.\n')
-            human_gamer(game_status)
-
-    else:
-        input_num = int(input('Input number from 1 to 28:\n'))
-
-        if input_num in range(1, 29):
-            return game_status - input_num
-        else:
-            print('Your number is not in range from 1 to 28.\n')
-            human_gamer(game_status)
+    max = 28 if game_status >= 28 else game_status
+    
+    num_flag = False
+    while not num_flag:
+        input_num = gamer_input(max)
+    
+        if input_num <= max:
+            game_status = game_status - input_num
+            num_flag = True
+            return game_status
+            
+        elif (input_num <= max) and (game_status < 28):
+            print(f'There are only {game_status} candies. Input number from 1 to {game_status}.')
+            continue
+        elif input_num not in range(1, 29):
+            print('Your number is not in range from 1 to 28. Try again.\n')
+            continue
+    
 
 def bot_gamer(game_status):
 #  Немного интеллекта добавил )
-    if game_status in range(30, 58): # 57 = 28 + 29. Надо сотавить второму игроку 29, после чего любой ход второго игрока приведет его к проигрышу
+    if game_status in range(30, 58): # 57 = 28 + 29. Надо оставить второму игроку 29, после чего любой ход второго игрока приведет его к проигрышу
         comp_num = game_status - 28 - 1
     elif game_status in range(1, 29): comp_num = game_status
     else: comp_num = randint(1, 28)
@@ -46,16 +57,16 @@ while game_status > 0:
     game_status = human_gamer(game_status)
 
     if game_status == 0:
-        print('Congratulations! You win!')
+        print('Congratulations! You win!\n')
         break
     else:
-        print(f'There are {game_status} candies now')
+        print(f'\nThere are {game_status} candies now.\n')
 
     game_status = bot_gamer(game_status)
 
     if game_status == 0:
-        print('Computer win!')
+        print('Computer win!\n')
         break
     else:
-        print(f'There are {game_status} candies now')
+        print(f'\nThere are {game_status} candies now.\n')
         
