@@ -9,7 +9,7 @@
 
 from random import randint
 
-game_status = int(120)
+game_status = 120
 print(f'\nYou see {game_status} candies and can take 28 or less of them.\nInput number how many candies you will take.\n')
 
 def gamer_input(max):
