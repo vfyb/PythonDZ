@@ -48,11 +48,6 @@ def decompress(text):
     
     return result
     
-# txt1 = "3a4b2c3b"
-# txt2 = "aaabbbbccbbb"
-
-# print(decompress(txt1))
-
 path_decomp = 'DZ-5/DZ-3-1.txt'
 path_comp = 'DZ-5/DZ-3-2.txt'
 
